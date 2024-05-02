@@ -24,7 +24,7 @@ import javax.persistence.Table;
 @Table(name="cliente")
 public class Cliente {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.ALL)
     @Column(unique = true,nullable = false)        
     private Integer IdCliente;
    
