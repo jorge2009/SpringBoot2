@@ -24,11 +24,12 @@ import javax.persistence.Table;
 @Table(name="cliente")
 public class Cliente {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.ALL)
     @Column(unique = true,nullable = false)        
     private Integer IdCliente;
    
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="id_persona")
     private Persona persona;
     
     private String contraseña;

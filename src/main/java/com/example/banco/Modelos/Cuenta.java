@@ -26,7 +26,8 @@ public class Cuenta {
     @Column(name="id_cuenta")
     private Integer idCuenta;
     
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="id_cliente")
     private Cliente cliente;
     
     private Integer numero_cuenta;

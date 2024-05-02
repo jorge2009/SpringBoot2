@@ -34,7 +34,8 @@ public class Movimientos {
    private double valor;
    private double saldo;
    
-   @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+   @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="id_cuenta")
     private Cuenta cuenta;
 
     public Integer getIdMonimiento() {

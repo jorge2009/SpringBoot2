@@ -51,7 +51,7 @@ class BancoApplicationTests {
     private Cliente cli;
     private ArrayList<Cliente> cliente=new ArrayList<>();
     
-    
+    //Test para buscar clientes
     @Test
     public void findAll() {
         System.err.println("Test Cliente");
@@ -62,8 +62,17 @@ class BancoApplicationTests {
        }
        }
     
-       
-    
+    //test para Buscar cliente por ID   
+   @Test
+    public void BuscaCliente(){
+           System.err.println("Busco Cliente con codigo 3");
+           when(clienteController.ObtenerClienteId(3));
+           for (Cliente cli : cliente) {
+               System.err.println("Cliente encontrado es "+cli.getPersona().getNombre());
+                              
+           }
+    }
+      
     
     
 	
