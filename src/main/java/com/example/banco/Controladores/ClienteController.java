@@ -46,6 +46,11 @@ public class ClienteController {
     return clienteServicio.ObtenerPorId(id);
     }
     
+    @PutMapping(path="/{id}")
+    public Cliente ActualizarCliente(@RequestBody Cliente cliente){
+    return this.clienteServicio.ActualizarCliente(cliente);
+    }
+
     
     @GetMapping("/query")
     public ArrayList<Cliente> ObtnerListaCliente(@RequestParam("estado") String estado){
