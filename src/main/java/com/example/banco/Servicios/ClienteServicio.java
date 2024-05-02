@@ -121,6 +121,17 @@ public class ClienteServicio {
         }
     }
 
-    
+     public Cliente ActualizarCliente(Cliente cliente){
+        Persona per=new Persona();
+        per.setIdPersona(cliente.getPersona().getIdPersona());
+        per.setEdad(cliente.getPersona().getEdad());
+        per.setGenero(cliente.getPersona().getGenero());
+        per.setDireccion(cliente.getPersona().getDireccion());
+        per.setNombre(cliente.getPersona().getNombre());
+        per.setTelefono(cliente.getPersona().getTelefono());
+        per.setIdentificacion(cliente.getPersona().getIdentificacion());
+        cliente.setPersona(per);
+    return clienteRepositorio.save(cliente);
+    }
     
 }
